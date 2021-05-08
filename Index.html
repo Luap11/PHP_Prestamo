@@ -8,7 +8,8 @@
     <!-- <link rel="shortcut icon" href="favicon_16.ico"/> -->
     <!-- <link rel="bookmark" href="favicon_16.ico"/> -->
     <!-- site css -->
-    <link rel="stylesheet" href="librerias/dist/css/site.min.css">
+
+    <link rel="stylesheet" href="Views/librerias/dist/css/site.min.css">
     <link
         href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic"
         rel="stylesheet" type="text/css">
@@ -18,12 +19,12 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="librerias/Js/jquery-3.6.0.slim.min.js"></script>
-    <script type="text/javascript" src="librerias/dist/js/site.min.js"></script>
-    
+    <script type="text/javascript" src="Views/librerias/Js/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="Views/librerias/dist/js/site.min.js"></script>
+
 </head>
 
-<body>
+<body onload="getUrl('Views/VCliente/VClienteList.php','')">
     <!--nav-->
     <nav role="navigation" class="navbar navbar-custom">
         <div class="container-fluid">
@@ -38,7 +39,6 @@
                 </button>
                 <a href="#" class="navbar-brand">Bootflat-Admin</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -70,39 +70,49 @@
                     <li class="list-group-item"><i class="glyphicon glyphicon-align-justify"></i> <b>SIDE PANEL</b></li>
                     <li class="list-group-item"><input type="text" class="form-control search-query"
                             placeholder="Search Something"></li>
-                    <li class="list-group-item">
-                        <a href="#" onclick="getUrl('VCliente.php','')"><i class="glyphicon glyphicon-home"></i>Cliente</a>
-                    </li>
+                    <!-- <li class="list-group-item">
+                        <a href="#" onclick="getUrl('VClienteList.php','')"><i class="glyphicon glyphicon-home"></i>Cliente</a>
+                    </li> -->
 
                     <li>
-                        <a href="#demo3" class="list-group-item " data-toggle="collapse">Item 3 <span
+                        <a href="#cliente" class="list-group-item " data-toggle="collapse">Clientes <span
                                 class="glyphicon glyphicon-chevron-right"></span></a>
-                        <div class="collapse" id="demo3">
-                            <a href="#SubMenu1" class="list-group-item" data-toggle="collapse">Subitem 1 <span
-                                    class="glyphicon glyphicon-chevron-right"></span></a>
-                            <div class="collapse list-group-submenu" id="SubMenu1">
-                                <a href="#" class="list-group-item">Subitem 1 a</a>
-                                <a href="#" class="list-group-item">Subitem 2 b</a>
-                                <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse">Subitem 3 c <span
-                                        class="glyphicon glyphicon-chevron-right"></span></a>
-                                <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
-                                    <a href="#" class="list-group-item">Sub sub item 1</a>
-                                    <a href="#" class="list-group-item">Sub sub item 2</a>
-                                </div>
-                                <a href="#" class="list-group-item">Subitem 4 d</a>
-                            </div>
-                            <a href="javascript:;" class="list-group-item">Subitem 2</a>
-                            <a href="javascript:;" class="list-group-item">Subitem 3</a>
-                        </div>
+                        <li class="collapse" id="cliente">
+                            <a href="#" onclick="getUrl('Views/VCliente/VClienteList.php','')" class="list-group-item">Lista
+                            de clientes</a>
+                            <a href="#" onclick="getUrl('Views/VCliente/VClienteInsert.php','')"
+                            class="list-group-item">Insertar nuevo cliente</a>
+                        </li>
                     </li>
                     <li>
-                        <a href="#demo4" class="list-group-item " data-toggle="collapse">Item 4 <span
+                        <a href="#empleado" class="list-group-item " data-toggle="collapse">Empleados <span
                                 class="glyphicon glyphicon-chevron-right"></span></a>
-                    <li class="collapse" id="demo4">
-                        <a href="" class="list-group-item">Subitem 1</a>
-                        <a href="" class="list-group-item">Subitem 2</a>
-                        <a href="" class="list-group-item">Subitem 3</a>
+                        <li class="collapse" id="empleado">
+                            <a href="#" onclick="getUrl('Views/VEmpleado/VEmpleadoList.php','')" class="list-group-item">Lista
+                            de empleados</a>
+                            <a href="#" onclick="getUrl('Views/VEmpleado/VEmpleadoInsert.php','')"
+                            class="list-group-item">Insertar nuevo empleado</a>
+                        </li>
                     </li>
+                    <li>
+                        <a href="#distrito" class="list-group-item " data-toggle="collapse">Distritos <span
+                                class="glyphicon glyphicon-chevron-right"></span></a>
+                        <li class="collapse" id="distrito">
+                            <a href="#" onclick="getUrl('Views/VDistrito/VDistritoList.php','')" class="list-group-item">Lista
+                            de distritos</a>
+                            <a href="#" onclick="getUrl('Views/VDistrito/VDistritoInsert.php','')"
+                            class="list-group-item">Insertar nuevo distrito</a>
+                        </li>
+                    </li>
+                    <li>
+                        <a href="#tipoCambio" class="list-group-item " data-toggle="collapse">Tipo de Cambio <span
+                                class="glyphicon glyphicon-chevron-right"></span></a>
+                        <li class="collapse" id="tipoCambio">
+                            <a href="#" onclick="getUrl('Views/VTipoCambio/VTipoCambioList.php','')" class="list-group-item">Lista
+                            de tipos de cambios</a>
+                            <a href="#" onclick="getUrl('Views/VTipoCambio/VTipoCambioInsert.php','')"
+                            class="list-group-item">Insertar nuevo tipo de cambio</a>
+                        </li>
                     </li>
                 </ul>
             </div>
@@ -115,45 +125,8 @@
                     </div>
                     <div class="panel-body">
                         <div class="content-row">
-                            <!-- <div class="bs-example">
-                                <table class="table table-condensed">
-                                  <thead>
-                                    <tr>
-                                      <th>#</th>
-                                      <th>First Name</th>
-                                      <th>Last Name</th>
-                                      <th>Username</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                      <td>2</td>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <td>3</td>
-                                      <td colspan="2">Larry the Bird</td>
-                                      <td>@twitter</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div> -->
-                              <h2 class="content-row-title">Tabla</h2>
-                              <div id='TbBody'>Resultado</div>
-                              <div class="row"></div>
-                              <div class="row"></div>
-                              <div class="row"></div>
-                              <div class="row"></div>
-                              <div class="row"></div>
-                              <div class="row"></div>
+                            <div id='TbBody'>Resultado</div>
+
                         </div>
                     </div><!-- panel body -->
                 </div>
@@ -161,9 +134,9 @@
         </div>
     </div>
     <!--footer-->
-    <div class="site-footer" style="position: fixed; bottom: 0%;">
+    <div class="site-footer" style="position:initial; bottom: 0%;">
         <div class="container">
-            
+
             <hr class="dashed" />
             <div class="copyright clearfix">
                 <p><b>Bootflat</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="getting-started.html">Getting
@@ -177,21 +150,25 @@
         </div>
     </div>
     <script>
-        function getUrl(link, para){
+
+
+
+        function getUrl(link, para, url) {
             $.ajax({
-                url:link,
-                data: {para},
+                url: link,
+                data: { para },
                 type: 'POST',
-                beforeSernd: function(e){
-    
+                beforeSernd: function (e) {
+
                 },
-                success: function(data){
+                success: function (data) {
                     $(TbBody).html(data);
-                },error: function(error){
-                    alert('Error 404:'+error);
+                }, error: function (error) {
+                    alert('Error 404:' + error);
                 }
             })
         }
     </script>
 </body>
+
 </html>

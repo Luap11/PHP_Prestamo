@@ -4,7 +4,7 @@ class Conexion{
     private $usu = 'root';
     private $pass = '';
     private $port = '3306';
-    private $bd = 'bd_prestamo';
+    private $bd = 'bdprestamo';
     public function getcon(){
         $con = new PDO('mysql:host='.$this->local.';'.
                     'port='.$this->port.';'.

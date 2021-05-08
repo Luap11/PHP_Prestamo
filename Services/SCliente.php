@@ -14,8 +14,26 @@ include '../Controllers/DAO/DCliente.php';
         $bus = $_REQUEST["txtbus"];
         $dcli->getList($bus);
         echo json_encode($dcli->getArray());
+    }else if($tipo == 'update'){
+        $nom = $_REQUEST['nom'];
+        $ape = $_REQUEST['ape'];
+        $dni = $_REQUEST['dni'];
+        $cod = $_REQUEST['cod'];
+        $codDist = $_REQUEST['codDist'];
+        $dcli->updateCliente($cod,$nom,$ape,$dni,$codDist);
+        echo json_encode($dcli->getArray());
+    }else if($tipo == 'delete'){
+        $cod = $_REQUEST["cod"];
+        $dcli->deleteCliente($cod);
+        echo json_encode($dcli->getArray());
+    }else if($tipo == 'insert'){
+        $nom = $_REQUEST['nom'];
+        $ape = $_REQUEST['ape'];
+        $dni = $_REQUEST['dni'];
+        $codDist = $_REQUEST['codDist'];
+        $dcli->insertCliente($nom,$ape,$dni,$codDist);
+        echo json_encode($dcli->getArray());
     }
 //}catch(Exception ex){
 
 //}
-?>
