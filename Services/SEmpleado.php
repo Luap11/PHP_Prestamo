@@ -4,7 +4,7 @@ header('Access-Control-Allow-Headers: Origin, X-Request-With Conent-Type, Accept
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('content-type: application/json; charset=utf8');
 
-include '../Controllers/BD/coneccion.php';
+include '../Controllers/BD/conexion.php';
 include '../Controllers/DAO/DEmpleado.php';
 
 
